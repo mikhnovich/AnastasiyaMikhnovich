@@ -1,21 +1,11 @@
 package hw1;
 
-import com.epam.tat.module4.Calculator;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class CalculatorMultiplyTest {
-    private Calculator calculator;
-
-    @BeforeMethod
-    public void setUp() {
-        this.calculator = new Calculator();
-    }
-
+public class CalculatorMultiplyTest extends TestingPreset {
     @DataProvider
     Object[][] multiplyTwoLongDigits() {
         return new Object[][]{
@@ -46,12 +36,5 @@ public class CalculatorMultiplyTest {
     public void multiplyTwoDoubleDigits(double a, double b, double expected) {
         double actual = calculator.mult(a, b);
         assertEquals(actual, expected);
-    }
-
-
-
-    @AfterMethod
-    public void tearDown() {
-        calculator = null;
     }
 }

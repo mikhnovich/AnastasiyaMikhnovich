@@ -1,23 +1,11 @@
 package hw1;
 
-import com.epam.tat.module4.Calculator;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class CalculatorAddTest {
-
-    private Calculator calculator;
-
-    @BeforeMethod
-    public void setUp() {
-        this.calculator = new Calculator();
-    }
-
-
+public class CalculatorAddTest extends TestingPreset {
     @DataProvider
     public Object[][] addTwoLongDigitsDataProvider() {
         return new Object[][]{
@@ -52,10 +40,5 @@ public class CalculatorAddTest {
 
         double actual = calculator.sum(a, b);
         assertEquals(actual, expected);
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        calculator = null;
     }
 }
