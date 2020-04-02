@@ -20,7 +20,7 @@
         <profile>
             <id>AddAndSubtract</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suit.xml>src/test/resources/CalculatorSuits/AddAndSubtractTestSuit.xml</suit.xml>
@@ -50,7 +50,7 @@
         <profile>
             <id>HW2</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                 <suit.xml>src/test/resources/HW2Suits/HW2Suit.xml</suit.xml>
