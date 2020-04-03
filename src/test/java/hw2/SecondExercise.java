@@ -43,9 +43,9 @@ public class SecondExercise extends SeleniumTestingPreset{
         // radio button name and it status is corresponding to selected
         // dropdown name and selected value is corresponding to selected
 
-        WebElement windLog = driver.findElement(By.xpath("//*[contains(text(),'Wind: condition changed to true')]"));
-        WebElement waterLog = driver.findElement(By.xpath("//*[contains(text(),'Water: condition changed to true')]"));
-        WebElement yellowColorLog = driver.findElement(By.xpath("//*[contains(text(),'Colors: value changed to Yellow')]"));
+        WebElement windLog = driver.findElement(By.xpath("//li[contains(text(),'Water') and contains(text(),'true')]"));
+        WebElement waterLog = driver.findElement(By.xpath("//li[contains(text(),'Water') and contains(text(),'true')]"));
+        WebElement yellowColorLog = driver.findElement(By.xpath("//li[contains(text(),'Colors') and contains(text(),'Yellow')]"));
 
         assertTrue(windLog.isDisplayed());
         assertTrue(waterLog.isDisplayed());

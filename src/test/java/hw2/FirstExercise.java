@@ -89,6 +89,7 @@ public class FirstExercise extends SeleniumTestingPreset {
                 "Elements packs"
         );
         asrt.assertEquals(actualLeftSideMenuNames, expectedLeftSideMenuNames);
+        asrt.assertAll();
 
     }
 }
