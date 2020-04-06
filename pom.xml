@@ -20,7 +20,7 @@
         <profile>
             <id>AddAndSubtract</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suit.xml>src/test/resources/CalculatorSuits/AddAndSubtractTestSuit.xml</suit.xml>
@@ -46,6 +46,16 @@
                 <suit.xml>src/test/resources/CalculatorSuits/AllTestsTestSuit.xml</suit.xml>
             </properties>
         </profile>
+
+        <profile>
+            <id>HW2</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suit.xml>src/test/resources/HW2Suits/HW2Suit.xml</suit.xml>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
@@ -61,6 +71,16 @@
             <version>1.0</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/calculator-1.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>3.8.1</version>
         </dependency>
     </dependencies>
 
