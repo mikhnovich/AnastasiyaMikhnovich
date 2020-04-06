@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="HW3 Tests">
+    <test name="HW3">
+        <classes>
+            <class name="hw3.fluent.FluentPatternApproach"/>
+            <class name="hw3.voids.VoidPatternApproach"/>
+        </classes>
+    </test>
+</suite>
