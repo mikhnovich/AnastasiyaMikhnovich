@@ -16,12 +16,31 @@ public class HeaderComponent extends AbstractComponent {
     @FindBy(linkText = "DIFFERENT ELEMENTS")
     private WebElement differentElementsLink;
 
+    @FindBy(id = "name")
+    private WebElement firstName;
+
+    @FindBy(id = "password")
+    private WebElement password;
+
+    @FindBy(id = "login-button")
+    private WebElement submit;
+
     public HeaderComponent(WebDriver driver) {
         super(driver);
     }
 
-    public WebElement getUserNameElement() {
-        return userName;
+    public HeaderComponent enterFirstName(String firstName) {
+        this.firstName.sendKeys(firstName);
+        return this;
+    }
+
+    public HeaderComponent enterPassword(String password) {
+        this.password.sendKeys(password);
+        return this;
+    }
+
+    public void submit() {
+        this.submit.click();
     }
 
     public boolean isUserNameVisible() {

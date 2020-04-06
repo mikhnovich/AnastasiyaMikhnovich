@@ -24,4 +24,7 @@ public class IframeComponent extends AbstractComponent {
         return iframeButton.isDisplayed();
     }
 
+    public void focus() {
+        getDriver().switchTo().frame(iframe);
+    }
 }

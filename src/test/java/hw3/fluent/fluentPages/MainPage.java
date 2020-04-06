@@ -1,6 +1,6 @@
 package hw3.fluent.fluentPages;
 
-import hw3.fluent.components.LoginComponent;
+import hw3.fluent.components.HeaderComponent;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,11 +11,8 @@ public class MainPage extends AbstractPage {
     @FindBy(id = "user-icon")
     private WebElement userIcon;
 
-    private LoginComponent loginComponent;
-
     public MainPage(WebDriver driver) {
         super(driver);
-        this.loginComponent = new LoginComponent(driver);
     }
 
     public static MainPage using(WebDriver driver) {
@@ -27,9 +24,9 @@ public class MainPage extends AbstractPage {
         return this;
     }
 
-    public LoginComponent clickUserIcon() {
+    public HeaderComponent clickUserIcon() {
         this.userIcon.click();
-        return loginComponent;
+        return getHeaderComponent();
     }
 
 }

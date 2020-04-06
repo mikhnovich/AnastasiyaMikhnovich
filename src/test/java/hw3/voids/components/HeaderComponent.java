@@ -15,8 +15,29 @@ public class HeaderComponent extends AbstractComponent {
     @FindBy(css = ".m-l8 > li")
     private List<WebElement> menuItems;
 
+    @FindBy(id = "name")
+    private WebElement firstName;
+
+    @FindBy(id = "password")
+    private WebElement password;
+
+    @FindBy(id = "login-button")
+    private WebElement submit;
+
     public HeaderComponent(WebDriver driver) {
         super(driver);
+    }
+
+    public void enterFirstName(String firstName) {
+        this.firstName.sendKeys(firstName);
+    }
+
+    public void enterPassword(String password) {
+        this.password.sendKeys(password);
+    }
+
+    public void submit() {
+        this.submit.click();
     }
 
     public boolean isUserNameVisible() {

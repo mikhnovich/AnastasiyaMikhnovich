@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class LeftSectionMenuComponent extends AbstractComponent {
     @FindBy(css = ".sidebar-menu > li")
-    private List <WebElement> leftSideMenuItems;
+    private List<WebElement> leftSideMenuItems;
 
     @FindBy(css = ".sidebar-menu > li")
     private List<WebElement> leftSideMenuItemsText;
@@ -28,7 +28,6 @@ public class LeftSectionMenuComponent extends AbstractComponent {
                 .map(WebElement::getText)
                 .collect(Collectors.toList());
     }
-
 
 
 }

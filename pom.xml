@@ -50,10 +50,20 @@
         <profile>
             <id>HW2</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suit.xml>src/test/resources/HW2Suits/HW2Suit.xml</suit.xml>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>HW3</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suit.xml>src/test/resources/HW3Suits/HW3Suit.xml</suit.xml>
             </properties>
         </profile>
     </profiles>

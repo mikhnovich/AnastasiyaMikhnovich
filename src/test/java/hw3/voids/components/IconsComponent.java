@@ -12,13 +12,13 @@ public class IconsComponent extends AbstractComponent {
     private List<WebElement> icons;
 
     @FindBy(className = "benefit-txt")
-    private List <WebElement> iconTextsElements;
+    private List<WebElement> iconTextsElements;
 
     public IconsComponent(WebDriver driver) {
         super(driver);
     }
 
-    public boolean allIconsAreDisplayed(){
+    public boolean allIconsAreDisplayed() {
         return icons.stream()
                 .allMatch(icon -> icon.isDisplayed());
     }
@@ -28,10 +28,6 @@ public class IconsComponent extends AbstractComponent {
                 .map(WebElement::getText)
                 .collect(Collectors.toList());
     }
-
-
-
-
 
 
 }
