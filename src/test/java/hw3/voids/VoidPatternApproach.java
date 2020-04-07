@@ -1,8 +1,10 @@
 package hw3.voids;
 
+import hw3.GetProperty;
 import hw3.voids.voidPages.MainPage;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,8 +12,11 @@ import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class VoidPatternApproach extends TestingPreset {
+
+    private static GetProperty property = new GetProperty();
+
     @Test
-    public void voidPatternApproachTest() {
+    public void voidPatternApproachTest() throws IOException {
         //1. Test site is opened
         MainPage mainPage = new MainPage(getDriver());
         mainPage.launch();
@@ -19,7 +24,7 @@ public class VoidPatternApproach extends TestingPreset {
         assertEquals(mainPage.getPageTitle(), "Home Page");
 
         //3. User is logged
-        mainPage.login("Roman", "Jdi1234");
+        mainPage.login(property.getProperty("userName"), property.getProperty("passsword"));
 
         //4. Name is displayed and equals to expected result
         assertTrue(mainPage.isUsernameVisible());

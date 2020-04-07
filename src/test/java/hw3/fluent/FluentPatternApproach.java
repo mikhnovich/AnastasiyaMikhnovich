@@ -1,18 +1,23 @@
 package hw3.fluent;
 
+import hw3.GetProperty;
 import hw3.fluent.components.HeaderComponent;
 import hw3.fluent.components.LogSidebarComponent;
 import hw3.fluent.fluentPages.DifferentElementsPage;
 import hw3.fluent.fluentPages.MainPage;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class FluentPatternApproach extends TestingPreset {
 
+    private static GetProperty property = new GetProperty();
+
     @Test
-    public void fluentApproachTest() {
+    public void fluentApproachTest() throws IOException {
         //1. Test site is opened
         MainPage mainPage = MainPage.using(getDriver())
                 .launch();
@@ -22,8 +27,8 @@ public class FluentPatternApproach extends TestingPreset {
 
         //3. User is logged
         mainPage.clickUserIcon()
-                .enterFirstName("Roman")
-                .enterPassword("Jdi1234")
+                .enterFirstName(property.getProperty("userName"))
+                .enterPassword(property.getProperty("passsword"))
                 .submit();
 
         //4. Name is displayed and equals to expected result
