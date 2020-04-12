@@ -56,7 +56,7 @@ public class FirstExercise extends SeleniumTestingPreset {
                 "Already have good base\n" +
                         "(about 20 internal and\n" +
                         "some external projects),\n" +
-                        "wish to get more…"
+                        "wish to get more\u2026"
         );
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("benefit-txt")));
         List<WebElement> iconTextsElements = driver.findElements(By.className("benefit-txt"));

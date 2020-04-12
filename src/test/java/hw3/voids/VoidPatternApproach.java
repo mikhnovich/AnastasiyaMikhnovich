@@ -50,7 +50,7 @@ public class VoidPatternApproach extends TestingPreset {
                 "Already have good base\n" +
                         "(about 20 internal and\n" +
                         "some external projects),\n" +
-                        "wish to get more…"
+                        "wish to get more\u2026"
         );
         assertEquals(expectedIconTexts, mainPage.getMenuItemsText());
 
