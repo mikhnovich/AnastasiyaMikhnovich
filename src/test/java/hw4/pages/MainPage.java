@@ -55,4 +55,7 @@ public class MainPage extends AbstractPage {
         getHeaderComponent().openTableWithPages();
     }
 
+    public void goToMetalsAndColoursPage() {
+        getHeaderComponent().goToMetalsAndColoursPage();
+    }
 }

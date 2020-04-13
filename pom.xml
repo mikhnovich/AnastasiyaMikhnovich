@@ -60,12 +60,23 @@
         <profile>
             <id>HW3</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suit.xml>src/test/resources/HW3Suits/HW3Suit.xml</suit.xml>
             </properties>
         </profile>
+
+        <profile>
+            <id>HW4</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suit.xml>src/test/resources/HW4Suits/HW4Suit.xml</suit.xml>
+            </properties>
+        </profile>
+
     </profiles>
 
     <dependencies>

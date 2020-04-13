@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,17 +24,16 @@ public class TableWithPagesPage extends AbstractPage {
         super(driver);
     }
 
-    public void checkDefaultDropdownValue() {
-        showEntriesDropdown.getText().startsWith("5");
+    public List<String> getDropdownValues() {
+        return Arrays.asList(showEntriesDropdown.getText().split("\n"));
     }
 
-    public void selectNewValue() {
-        new Select(showEntriesDropdown).selectByVisibleText("10");
+    public void selectDropdownValue(String toSelect) {
+        new Select(showEntriesDropdown).selectByVisibleText(toSelect);
     }
 
     public int getTableRowsCount() {
-        int size = table.size();
-        return size;
+        return table.size();
     }
 
     public void searchInTable(String search) {

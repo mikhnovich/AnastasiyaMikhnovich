@@ -28,7 +28,7 @@ public class FluentPatternApproach extends TestingPreset {
         //3. User is logged
         mainPage.clickUserIcon()
                 .enterFirstName(property.getProperty("userName"))
-                .enterPassword(property.getProperty("passsword"))
+                .enterPassword(property.getProperty("password"))
                 .submit();
 
         //4. Name is displayed and equals to expected result

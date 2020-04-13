@@ -13,7 +13,7 @@ import static org.testng.AssertJUnit.assertTrue;
 
 public class FirstExercise extends TestingPreset {
 
-    private static GetProperty property = new GetProperty();
+    private static final GetProperty property = new GetProperty();
 
     @Test
     public void firstExerciseTest() throws IOException {
@@ -23,8 +23,8 @@ public class FirstExercise extends TestingPreset {
         //2. Browser title equals "Home Page"
         assertEquals(mainPage.getPageTitle(), "Home Page");
 
-        //3. User is logged
-        mainPage.login(property.getProperty("userName"), property.getProperty("passsword"));
+        //3. User is logged in
+        mainPage.login(property.getProperty("userName"), property.getProperty("password"));
 
         //4. Name is displayed and equals to expected result
         assertTrue(mainPage.isUsernameVisible());
@@ -40,13 +40,14 @@ public class FirstExercise extends TestingPreset {
         TableWithPagesPage tableWithPagesPage = new TableWithPagesPage(getDriver());
 
         //7. Default value is 5
-        tableWithPagesPage.checkDefaultDropdownValue();
+        List<String> dropdownValues = tableWithPagesPage.getDropdownValues();
+        assertTrue(dropdownValues.size() > 0 && dropdownValues.get(0).equals("5"));
 
         //8.Selected value should be 10
-        tableWithPagesPage.selectNewValue();
+        tableWithPagesPage.selectDropdownValue("10");
 
         //9. Table rows should correspond to the dropdown value
-        assertEquals(tableWithPagesPage.getTableRowsCount(), 10);
+        assertEquals(10, tableWithPagesPage.getTableRowsCount());
 
         //10. Type in search text field "junit"
         String textToSearchFor = property.getProperty("searchText").toLowerCase();

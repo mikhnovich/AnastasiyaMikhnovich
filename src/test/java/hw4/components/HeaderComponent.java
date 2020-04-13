@@ -30,6 +30,9 @@ public class HeaderComponent extends AbstractComponent {
     @FindBy(linkText = "Table with pages")
     private WebElement tableWithPages;
 
+    @FindBy(linkText = "METALS & COLORS")
+    private WebElement linkToMetalsAndColorsPage;
+
 
     public HeaderComponent(WebDriver driver) {
         super(driver);
@@ -57,7 +60,7 @@ public class HeaderComponent extends AbstractComponent {
 
     public boolean allMenuItemsAreDisplayed() {
         return menuItems.stream()
-                .allMatch(item -> item.isDisplayed());
+                .allMatch(WebElement::isDisplayed);
     }
 
     public List<String> getMenuItemsText() {
@@ -74,5 +77,7 @@ public class HeaderComponent extends AbstractComponent {
         tableWithPages.click();
     }
 
-
+    public void goToMetalsAndColoursPage() {
+        linkToMetalsAndColorsPage.click();
+    }
 }

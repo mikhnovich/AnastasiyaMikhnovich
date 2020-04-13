@@ -24,7 +24,7 @@ public class VoidPatternApproach extends TestingPreset {
         assertEquals(mainPage.getPageTitle(), "Home Page");
 
         //3. User is logged
-        mainPage.login(property.getProperty("userName"), property.getProperty("passsword"));
+        mainPage.login(property.getProperty("userName"), property.getProperty("password"));
 
         //4. Name is displayed and equals to expected result
         assertTrue(mainPage.isUsernameVisible());

@@ -17,4 +17,8 @@ public class MyChromeDriver {
         }
         return driver;
     }
+
+    public static void invalidateDriver() {
+        driver = null;
+    }
 }

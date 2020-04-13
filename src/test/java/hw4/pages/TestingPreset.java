@@ -22,6 +22,7 @@ public class TestingPreset {
     @AfterMethod
     public void tearDown() {
         driver.quit();
+        MyChromeDriver.invalidateDriver();
     }
 
     public WebDriver getDriver() {

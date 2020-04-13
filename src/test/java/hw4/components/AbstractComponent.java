@@ -5,7 +5,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class AbstractComponent {
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public AbstractComponent(WebDriver driver) {
         this.driver = driver;
