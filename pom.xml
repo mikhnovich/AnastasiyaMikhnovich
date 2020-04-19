@@ -93,7 +93,7 @@
         <profile>
             <id>HW5_failing</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                 <suit.xml>src/test/resources/HW5Suits/HW5FailingSuit.xml</suit.xml>
