@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="HW5 Failing Test">
-    <test name="HW5 failing test">
+<suite name="HW7 Tests">
+    <test name="HW6">
         <classes>
-            <class name="hw5.voids.FailingTest"/>
+            <class name="hw6.RunCucumberTests"/>
         </classes>
     </test>
 </suite>
