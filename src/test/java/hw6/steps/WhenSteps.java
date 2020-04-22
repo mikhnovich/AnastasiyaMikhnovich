@@ -33,24 +33,16 @@ public class WhenSteps extends BaseStep {
         iClickOnTabOnTheHeaderMenu(name);
     }
 
-
-    @When("I click checkbox Water on the Elements page")
-    public void iClickCheckboxWaterOnTheElementsPage() {
+    @When("I click checkbox {string} on the Elements page")
+    public void iClickCheckboxOnTheElementsPage(String name) {
         new DifferentElementsPage(getDriver())
-                .checkWater();
+                .checkCheckboxBy(name);
     }
 
-    @When("I click checkbox Wind on the Elements page")
-    public void iClickCheckboxWindOnTheElementsPage() {
+    @When("I select radiobutton {string} on the Elements page")
+    public void iSelectRadiobuttonOnTheElementsPage(String name) {
         new DifferentElementsPage(getDriver())
-                .checkWind();
-
-    }
-
-    @When("I select radiobutton Selen on the Elements page")
-    public void iSelectRadiobuttonSelenOnTheElementsPage() {
-        new DifferentElementsPage(getDriver())
-                .checkSelen();
+                .checkRadiobuttonBy(name);
     }
 
     @When("I select {string} in colors dropdown")

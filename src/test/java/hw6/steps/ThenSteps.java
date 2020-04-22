@@ -18,15 +18,11 @@ import static org.testng.AssertJUnit.assertTrue;
 
 public class ThenSteps extends BaseStep {
 
-    @Then("Log row should be for each selected value on the log panel")
-    public void logRowShouldBeForEachSelectedValueOnTheLogPanel() {
+    @Then("I can see log containing {string}")
+    public void iCanSeeLogContaining(String entry) {
         DifferentElementsPage differentElementsPage = new DifferentElementsPage(getDriver());
         LogSidebarComponent logSidebarComponent = differentElementsPage.getLogSidebarComponent();
-        assertTrue(logSidebarComponent.isLogVisible());
-        assertTrue(logSidebarComponent.containsLogEntryIgnoreTime("Wind: condition changed to true"));
-        assertTrue(logSidebarComponent.containsLogEntryIgnoreTime("Water: condition changed to true"));
-        assertTrue(logSidebarComponent.containsLogEntryIgnoreTime("Colors: value changed to Yellow"));
-
+        assertTrue(logSidebarComponent.containsLogEntryIgnoreTime(entry));
     }
 
     @Then("I can see my name {string} on the top left side of the screen")
