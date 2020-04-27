@@ -4,6 +4,7 @@
         <classes>
             <class name="hw5.voids.MainPageStepsTest"/>
             <class name="hw5.fluent.DifferentElementsPageTest"/>
+            <class name="hw5.voids.FailingTest"/>
         </classes>
     </test>
 </suite>

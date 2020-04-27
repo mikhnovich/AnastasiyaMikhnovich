@@ -17,6 +17,8 @@
         <aspectj.version>1.8.10</aspectj.version>
         <allure.version>2.13.2</allure.version>
         <allure.maven.plugin.version>2.8</allure.maven.plugin.version>
+        <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
+        <cucumber.version>5.6.0</cucumber.version>
     </properties>
 
     <profiles>
@@ -83,7 +85,7 @@
         <profile>
             <id>HW5</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suit.xml>src/test/resources/HW5Suits/HW5Suit.xml</suit.xml>
@@ -91,12 +93,12 @@
         </profile>
 
         <profile>
-            <id>HW5_failing</id>
+            <id>HW6</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suit.xml>src/test/resources/HW5Suits/HW5FailingSuit.xml</suit.xml>
+                <suit.xml>src/test/resources/HW6/suits/HW6Suit.xml</suit.xml>
             </properties>
         </profile>
     </profiles>
@@ -130,6 +132,28 @@
             <artifactId>allure-testng</artifactId>
             <version>${allure.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-commandline</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber5-jvm</artifactId>
+            <version>${allure.version}</version>
         </dependency>
 
     </dependencies>
@@ -171,6 +195,21 @@
                 <version>${allure.maven.plugin.version}</version>
                 <configuration>
                     <resultsDirectory>${project.basedir}/allure-results</resultsDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>${maven-clean-plugin.version}</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${project.basedir}/allure-results</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                    </filesets>
                 </configuration>
             </plugin>
         </plugins>
