@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="HW7 Tests">
+    <test name="HW7">
+        <classes>
+            <class name="hw7.HW7Test"/>
+        </classes>
+    </test>
+</suite>
