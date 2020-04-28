@@ -13,9 +13,6 @@ public class JDILoginForm extends Form<User> {
     @XPath("//*[@id='password']")
     private TextField password;
 
-//    @XPath("//*[@id='user-name']")
-//    private TextField displayedName;
-
     @XPath("//*[@id='login-button']")
     private Button loginButton;
 
