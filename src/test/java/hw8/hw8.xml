@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project xmlns:con="http://eviware.com/soapui/config" id="b8c916c2-a5ff-400d-88f6-165bfefa0700"
+                    activeEnvironment="Default" name="SpellerAPITest" resourceRoot="" soapui-version="5.5.0"
+                    abortOnError="false" runType="SEQUENTIAL">
+    <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local">
+            <![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="true"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="SpellerTestSuit"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="TestCorrections"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="true"/>
+</xml-fragment>]]></con:setting>
+    </con:settings>
+    <con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:WsdlInterface"
+                   id="bfc7a41f-3fcd-4831-8900-99d49cdeefc8" wsaVersion="NONE" name="SpellServiceSoap" type="wsdl"
+                   bindingName="{http://speller.yandex.net/services/spellservice}SpellServiceSoap" soapVersion="1_1"
+                   anonymous="optional" definition="https://speller.yandex.net/services/spellservice?WSDL">
+        <con:settings/>
+        <con:definitionCache/>
+        <con:endpoints>
+            <con:endpoint>http://speller.yandex.net/services/spellservice</con:endpoint>
+        </con:endpoints>
+        <con:operation id="404a84b4-b551-45c1-9019-46f69d8fd24c" isOneWay="false"
+                       action="http://speller.yandex.net/services/spellservice/checkText" name="checkText"
+                       bindingOperationName="checkText" type="Request-Response" inputName="" receivesAttachments="false"
+                       sendsAttachments="false" anonymous="optional">
+            <con:settings/>
+            <con:call id="512e609e-3764-4438-b778-990c0507a019" name="Request 1">
+                <con:settings>
+                    <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                    </con:setting>
+                </con:settings>
+                <con:encoding>UTF-8</con:encoding>
+                <con:endpoint>http://speller.yandex.net/services/spellservice</con:endpoint>
+                <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spel="http://speller.yandex.net/services/spellservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <spel:CheckTextRequest lang="zn" options="0" format="">
+         <spel:text>let</spel:text>
+      </spel:CheckTextRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+                <con:credentials>
+                    <con:authType>No Authorization</con:authType>
+                </con:credentials>
+                <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                <con:jmsPropertyConfig/>
+                <con:wsaConfig mustUnderstand="NONE" version="200508"
+                               action="http://speller.yandex.net/services/spellservice/checkText"/>
+                <con:wsrmConfig version="1.2"/>
+            </con:call>
+        </con:operation>
+        <con:operation id="00457446-e2ba-4ccb-aae3-e4ea5608c271" isOneWay="false"
+                       action="http://speller.yandex.net/services/spellservice/checkTexts" name="checkTexts"
+                       bindingOperationName="checkTexts" type="Request-Response" inputName=""
+                       receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+            <con:settings/>
+            <con:call id="cbc7df19-3c83-4367-8166-afeaf806f846" name="Request 1">
+                <con:settings/>
+                <con:encoding>UTF-8</con:encoding>
+                <con:endpoint>http://speller.yandex.net/services/spellservice</con:endpoint>
+                <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spel="http://speller.yandex.net/services/spellservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <spel:CheckTextsRequest lang="?" options="0" format="">
+         <!--Zero or more repetitions:-->
+         <spel:text>?</spel:text>
+      </spel:CheckTextsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+                <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                <con:wsaConfig mustUnderstand="NONE" version="200508"
+                               action="http://speller.yandex.net/services/spellservice/checkTexts"/>
+            </con:call>
+        </con:operation>
+    </con:interface>
+    <con:testSuite id="d288e21b-8a17-465a-ad8e-97f47a987480" name="SpellerTestSuit">
+        <con:settings/>
+        <con:runType>SEQUENTIAL</con:runType>
+        <con:testCase id="3c159022-dffe-49b3-be52-666f62ffa4e7" failOnError="true" failTestCaseOnErrors="true"
+                      keepSession="false" maxResults="0" name="PositiveTest" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="request" id="00644a1b-a46f-48e3-b125-3c1871e61546" name="PositiveTest">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RequestStep">
+                    <con:interface>SpellServiceSoap</con:interface>
+                    <con:operation>checkText</con:operation>
+                    <con:request name="PositiveTest" outgoingWss="" incomingWss="" timeout="" sslKeystore=""
+                                 useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""
+                                 id="b7bc4383-7b02-40e7-a8ab-0ff18951bece">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>http://speller.yandex.net/services/spellservice</con:endpoint>
+                        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spel="http://speller.yandex.net/services/spellservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <spel:CheckTextRequest lang="${#TestCase#lang}" options="0" format="">
+         <spel:text>${#TestCase#text}</spel:text>
+      </spel:CheckTextRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+                        <con:assertion type="SOAP Response" id="7d36dd9b-f5a3-4681-9d8c-20546956b549"
+                                       name="SOAP Response"/>
+                        <con:assertion type="Simple NotContains" id="6328b9aa-f095-41a2-9755-82c3d34ec6bc"
+                                       name="Not Contains">
+                            <con:configuration>
+                                <token>${#Project#error}</token>
+                                <ignoreCase>false</ignoreCase>
+                                <useRegEx>false</useRegEx>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                                       action="http://speller.yandex.net/services/spellservice/checkText"/>
+                        <con:wsrmConfig version="1.2"/>
+                    </con:request>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="groovy" name="SetValues" id="1bd1937e-5cfa-45a0-ba03-9770c03388a4">
+                <con:settings/>
+                <con:config>
+                    <script>def count = Integer.parseInt(testRunner.testCase.getPropertyValue("count"));
+                        def values = Arrays.asList("Let", "it", "be");
+                        def lang = Arrays.asList("en", "en", "en");
+                        if (count &lt; values.size()) {
+                        testRunner.testCase.setPropertyValue("lang", lang[count]);
+                        testRunner.testCase.setPropertyValue("text", values[count]);
+                        testRunner.gotoStepByName("PositiveTest");
+                        count++;
+                        testRunner.testCase.setPropertyValue("count", count.toString());
+                        }
+                    </script>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="groovy" name="ResetCount" id="b56a030b-1a9f-48ce-8576-91b726b58ae9">
+                <con:settings/>
+                <con:config>
+                    <script>testRunner.testCase.setPropertyValue("count", "0");</script>
+                </con:config>
+            </con:testStep>
+            <con:properties>
+                <con:property>
+                    <con:name>lang</con:name>
+                    <con:value>en</con:value>
+                </con:property>
+                <con:property>
+                    <con:name>text</con:name>
+                    <con:value>it</con:value>
+                </con:property>
+                <con:property>
+                    <con:name>count</con:name>
+                    <con:value>0</con:value>
+                </con:property>
+            </con:properties>
+        </con:testCase>
+        <con:testCase id="dcf94ab2-6c40-4635-a220-6390c3e16804" failOnError="true" failTestCaseOnErrors="true"
+                      keepSession="false" maxResults="0" name="NegativeTest" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="request" id="32eba457-17c1-4cd5-a9aa-9af8e4e88f01" name="NegativeTest">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RequestStep">
+                    <con:interface>SpellServiceSoap</con:interface>
+                    <con:operation>checkText</con:operation>
+                    <con:request name="NegativeTest" outgoingWss="" incomingWss="" timeout="" sslKeystore=""
+                                 useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""
+                                 id="b7bc4383-7b02-40e7-a8ab-0ff18951bece">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>http://speller.yandex.net/services/spellservice</con:endpoint>
+                        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spel="http://speller.yandex.net/services/spellservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <spel:CheckTextRequest lang="${#TestCase#lang}" options="0" format="">
+         <spel:text>${#TestCase#text}</spel:text>
+      </spel:CheckTextRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+                        <con:assertion type="SOAP Response" id="7d36dd9b-f5a3-4681-9d8c-20546956b549"
+                                       name="SOAP Response"/>
+                        <con:assertion type="Simple Contains" id="71a57539-be9e-40b6-b32a-7226a44b9955" name="Contains">
+                            <con:configuration>
+                                <token>${#Project#error}</token>
+                                <ignoreCase>false</ignoreCase>
+                                <useRegEx>false</useRegEx>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                                       action="http://speller.yandex.net/services/spellservice/checkText"/>
+                        <con:wsrmConfig version="1.2"/>
+                    </con:request>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="groovy" name="SetValues" id="66da5ad8-14c3-4d79-a670-26e6ecec886f">
+                <con:settings/>
+                <con:config>
+                    <script>def count = Integer.parseInt(testRunner.testCase.getPropertyValue("count"));
+                        def values = Arrays.asList("Leet", "it", "bie");
+                        def lang = Arrays.asList("en", "en", "en");
+                        if (count &lt; values.size()) {
+                        testRunner.testCase.setPropertyValue("lang", lang[count]);
+                        testRunner.testCase.setPropertyValue("text", values[count]);
+                        testRunner.gotoStepByName("NegativeTest");
+                        count++;
+                        testRunner.testCase.setPropertyValue("count", count.toString());
+                        }
+                    </script>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="groovy" name="ResetCount" id="d3333b0d-82f2-44ba-93c7-e2602c8430d9">
+                <con:settings/>
+                <con:config>
+                    <script>testRunner.testCase.setPropertyValue("count", "0");</script>
+                </con:config>
+            </con:testStep>
+            <con:properties>
+                <con:property>
+                    <con:name>lang</con:name>
+                    <con:value>en</con:value>
+                </con:property>
+                <con:property>
+                    <con:name>text</con:name>
+                    <con:value>bie</con:value>
+                </con:property>
+                <con:property>
+                    <con:name>count</con:name>
+                    <con:value>3</con:value>
+                </con:property>
+            </con:properties>
+        </con:testCase>
+        <con:testCase id="dbb0d10a-02c9-450f-aa3f-8d275b539b69" failOnError="true" failTestCaseOnErrors="true"
+                      keepSession="false" maxResults="0" name="NegativeTestTextWithDigits" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="request" id="efde4aa5-f9c7-4047-a6c6-4ddba04c9bc7" name="NegativeTest">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RequestStep">
+                    <con:interface>SpellServiceSoap</con:interface>
+                    <con:operation>checkText</con:operation>
+                    <con:request name="NegativeTest" outgoingWss="" incomingWss="" timeout="" sslKeystore=""
+                                 useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""
+                                 id="b7bc4383-7b02-40e7-a8ab-0ff18951bece">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>http://speller.yandex.net/services/spellservice</con:endpoint>
+                        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spel="http://speller.yandex.net/services/spellservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <spel:CheckTextRequest lang="${#TestCase#lang}" options="0" format="">
+         <spel:text>${#TestCase#text}</spel:text>
+      </spel:CheckTextRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+                        <con:assertion type="SOAP Response" id="7d36dd9b-f5a3-4681-9d8c-20546956b549"
+                                       name="SOAP Response"/>
+                        <con:assertion type="Simple Contains" id="a2d709b9-bc49-4d0e-8646-9981c9bf95cf" name="Contains">
+                            <con:configuration>
+                                <token>${#Project#error}</token>
+                                <ignoreCase>false</ignoreCase>
+                                <useRegEx>false</useRegEx>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                                       action="http://speller.yandex.net/services/spellservice/checkText"/>
+                        <con:wsrmConfig version="1.2"/>
+                    </con:request>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="groovy" name="SetValues" id="1cf98449-d8ca-4e89-a579-b222b8c8a65e">
+                <con:settings/>
+                <con:config>
+                    <script>def count = Integer.parseInt(testRunner.testCase.getPropertyValue("count"));
+                        def values = Arrays.asList("Let1", "it2", "be3");
+                        def lang = Arrays.asList("en", "en", "en");
+                        if (count &lt; values.size()) {
+                        testRunner.testCase.setPropertyValue("lang", lang[count]);
+                        testRunner.testCase.setPropertyValue("text", values[count]);
+                        testRunner.gotoStepByName("NegativeTest");
+                        count++;
+                        testRunner.testCase.setPropertyValue("count", count.toString());
+                        }
+                    </script>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="groovy" name="ResetCount" id="c34b9c0c-e474-4a7c-80c7-44d0f1d9d7a9">
+                <con:settings/>
+                <con:config>
+                    <script>testRunner.testCase.setPropertyValue("count", "0");</script>
+                </con:config>
+            </con:testStep>
+            <con:properties>
+                <con:property>
+                    <con:name>lang</con:name>
+                    <con:value>en</con:value>
+                </con:property>
+                <con:property>
+                    <con:name>text</con:name>
+                    <con:value>be3</con:value>
+                </con:property>
+                <con:property>
+                    <con:name>count</con:name>
+                    <con:value>0</con:value>
+                </con:property>
+            </con:properties>
+        </con:testCase>
+        <con:testCase id="59473e1a-547b-449a-a316-c08ed4416ddd" failOnError="true" failTestCaseOnErrors="true"
+                      keepSession="false" maxResults="0" name="IncorrectLanguageTest" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="request" id="4dfefed9-b846-4f79-be2e-b8dc2d4d8267" name="NegativeTest">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RequestStep">
+                    <con:interface>SpellServiceSoap</con:interface>
+                    <con:operation>checkText</con:operation>
+                    <con:request name="NegativeTest" outgoingWss="" incomingWss="" timeout="" sslKeystore=""
+                                 useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""
+                                 id="b7bc4383-7b02-40e7-a8ab-0ff18951bece">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>http://speller.yandex.net/services/spellservice</con:endpoint>
+                        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spel="http://speller.yandex.net/services/spellservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <spel:CheckTextRequest lang="${#TestCase#lang}" options="0" format="">
+         <spel:text>${#TestCase#text}</spel:text>
+      </spel:CheckTextRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+                        <con:assertion type="Simple Contains" id="a2d709b9-bc49-4d0e-8646-9981c9bf95cf" name="Contains">
+                            <con:configuration>
+                                <token>SpellService: Invalid parameter 'lang'</token>
+                                <ignoreCase>false</ignoreCase>
+                                <useRegEx>false</useRegEx>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                                       action="http://speller.yandex.net/services/spellservice/checkText"/>
+                        <con:wsrmConfig version="1.2"/>
+                    </con:request>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="groovy" name="SetValues" id="455cddb2-c446-42e2-8e0f-fed98d68e6ac">
+                <con:settings/>
+                <con:config>
+                    <script>def count = Integer.parseInt(testRunner.testCase.getPropertyValue("count"));
+                        def values = Arrays.asList("Let", "it", "be");
+                        def lang = Arrays.asList("zn", "za", "zx");
+                        if (count &lt; values.size()) {
+                        testRunner.testCase.setPropertyValue("lang", lang[count]);
+                        testRunner.testCase.setPropertyValue("text", values[count]);
+                        testRunner.gotoStepByName("NegativeTest");
+                        count++;
+                        testRunner.testCase.setPropertyValue("count", count.toString());
+                        }
+                    </script>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="groovy" name="ResetCount" id="30429431-c7c5-48b5-97d5-2ea54b6ddc75">
+                <con:settings/>
+                <con:config>
+                    <script>testRunner.testCase.setPropertyValue("count", "0");</script>
+                </con:config>
+            </con:testStep>
+            <con:properties>
+                <con:property>
+                    <con:name>count</con:name>
+                    <con:value>0</con:value>
+                </con:property>
+                <con:property>
+                    <con:name>lang</con:name>
+                    <con:value>zx</con:value>
+                </con:property>
+                <con:property>
+                    <con:name>text</con:name>
+                    <con:value>be</con:value>
+                </con:property>
+            </con:properties>
+        </con:testCase>
+        <con:testCase id="0725c6a2-d976-425e-a7b0-93fb749082fa" failOnError="true" failTestCaseOnErrors="true"
+                      keepSession="false" maxResults="0" name="TestCorrections" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="request" id="7b6dab9c-ac9a-4170-8605-fb3301633c33" name="PositiveTest">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RequestStep">
+                    <con:interface>SpellServiceSoap</con:interface>
+                    <con:operation>checkText</con:operation>
+                    <con:request name="PositiveTest" outgoingWss="" incomingWss="" timeout="" sslKeystore=""
+                                 useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""
+                                 id="b7bc4383-7b02-40e7-a8ab-0ff18951bece">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:encoding>UTF-8</con:encoding>
+                        <con:endpoint>http://speller.yandex.net/services/spellservice</con:endpoint>
+                        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spel="http://speller.yandex.net/services/spellservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <spel:CheckTextRequest lang="${#TestCase#lang}" options="0" format="">
+         <spel:text>${#TestCase#text}</spel:text>
+      </spel:CheckTextRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+                        <con:assertion type="SOAP Response" id="7d36dd9b-f5a3-4681-9d8c-20546956b549"
+                                       name="SOAP Response"/>
+                        <con:assertion type="Simple NotContains" id="0ddfe76f-0841-47b1-bb4e-1ffac1167aa3">
+                            <con:configuration/>
+                        </con:assertion>
+                        <con:assertion type="Simple Contains" id="01b2d4c0-2f17-4adb-ad60-df1f9b5a45f2" name="Contains">
+                            <con:configuration>
+                                <token>${#TestCase#expected}</token>
+                                <ignoreCase>false</ignoreCase>
+                                <useRegEx>false</useRegEx>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:assertion type="Simple NotContains" id="c6272425-7e36-44f2-a650-2d63531602ef"
+                                       name="Not Contains">
+                            <con:configuration>
+                                <token/>
+                                <ignoreCase>false</ignoreCase>
+                                <useRegEx>false</useRegEx>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:assertion type="Simple Contains" id="2115a17c-e441-43ea-88a3-6d9f6c0d5fc7"
+                                       name="Contains error">
+                            <con:configuration>
+                                <token>${#Project#error}</token>
+                                <ignoreCase>false</ignoreCase>
+                                <useRegEx>false</useRegEx>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:wsaConfig mustUnderstand="NONE" version="200508"
+                                       action="http://speller.yandex.net/services/spellservice/checkText"/>
+                        <con:wsrmConfig version="1.2"/>
+                    </con:request>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="groovy" name="SetValues" id="baaf8d50-7891-41ae-9a34-a1c3607c5fcd">
+                <con:settings/>
+                <con:config>
+                    <script>def count = Integer.parseInt(testRunner.testCase.getPropertyValue("count"));
+                        def values = Arrays.asList("Leet", "iet", "be1");
+                        def expected = Arrays.asList("Let", "it", "be");
+                        def lang = Arrays.asList("en", "en", "en");
+                        if (count &lt; values.size()) {
+                        testRunner.testCase.setPropertyValue("lang", lang[count]);
+                        testRunner.testCase.setPropertyValue("text", values[count]);
+                        testRunner.testCase.setPropertyValue("expected", expected[count]);
+                        testRunner.gotoStepByName("PositiveTest");
+                        count++;
+                        testRunner.testCase.setPropertyValue("count", count.toString());
+                        }
+                    </script>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="groovy" name="ResetCount" id="ade169d5-c9d1-4bac-a4f5-be6d96634228">
+                <con:settings/>
+                <con:config>
+                    <script>testRunner.testCase.setPropertyValue("count", "0");</script>
+                </con:config>
+            </con:testStep>
+            <con:properties>
+                <con:property>
+                    <con:name>lang</con:name>
+                    <con:value>en</con:value>
+                </con:property>
+                <con:property>
+                    <con:name>text</con:name>
+                    <con:value>be1</con:value>
+                </con:property>
+                <con:property>
+                    <con:name>count</con:name>
+                    <con:value>0</con:value>
+                </con:property>
+                <con:property>
+                    <con:name>expected</con:name>
+                    <con:value>be</con:value>
+                </con:property>
+            </con:properties>
+        </con:testCase>
+        <con:properties/>
+    </con:testSuite>
+    <con:properties>
+        <con:property>
+            <con:name>count</con:name>
+            <con:value>2</con:value>
+        </con:property>
+        <con:property>
+            <con:name>error</con:name>
+            <con:value>error</con:value>
+        </con:property>
+    </con:properties>
+    <con:wssContainer/>
+    <con:oAuth2ProfileContainer/>
+    <con:oAuth1ProfileContainer/>
+    <con:sensitiveInformation/>
+</con:soapui-project>
