@@ -19,6 +19,11 @@
         <allure.maven.plugin.version>2.8</allure.maven.plugin.version>
         <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
         <cucumber.version>5.6.0</cucumber.version>
+        <jdi.version>1.2.3</jdi.version>
+
+        <domain>https://jdi-testing.github.io/jdi-light/</domain>
+        <driver>chrome</driver>
+
         <rest.assured.version>4.2.0</rest.assured.version>
         <gson.version>2.8.6</gson.version>
         <lombok.version>1.18.12</lombok.version>
@@ -99,10 +104,21 @@
         <profile>
             <id>HW6</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>false
+                </activeByDefault>
             </activation>
             <properties>
                 <suit.xml>src/test/resources/HW6/suits/HW6Suit.xml</suit.xml>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>HW7</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suit.xml>src/test/resources/HW7/HW6Suit.xml</suit.xml>
             </properties>
         </profile>
         <profile>
@@ -111,7 +127,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suit.xml>src/test/resources/HW9/suits/HW9Suit.xml</suit.xml>
+                <suit.xml>src/test/resources/HW9/HW9Suit.xml</suit.xml>
             </properties>
         </profile>
     </profiles>
@@ -135,11 +151,11 @@
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
         </dependency>
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>3.8.1</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>io.github.bonigarcia</groupId>-->
+        <!--            <artifactId>webdrivermanager</artifactId>-->
+        <!--            <version>3.8.1</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
@@ -167,6 +183,31 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-cucumber5-jvm</artifactId>
             <version>${allure.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.epam.jdi</groupId>
+            <artifactId>jdi-light-html</artifactId>
+            <version>${jdi.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.9.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.10.2</version>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
