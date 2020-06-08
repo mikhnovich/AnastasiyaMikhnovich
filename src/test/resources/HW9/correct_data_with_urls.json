@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "textRequest": "Please write back to me: me@mymail.com",
+    "options": "IGNORE_URLS",
+    "lang": "ENGLISH"
+  },
+  {
+    "id": "2",
+    "textRequest": "URL example: https://domain.com",
+    "options": "IGNORE_URLS",
+    "lang": "ENGLISH"
+  },
+  {
+    "id": "3",
+    "textRequest": "check text with FTP: ftp:\\ftp.domain.com",
+    "options": "IGNORE_URLS",
+    "lang": "ENGLISH"
+  }
+]
